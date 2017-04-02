@@ -1,4 +1,4 @@
-import readDir as _readDir from 'fs'
+import { readDir as _readDir } from 'fs'
 
 let readDir= function( dir){
 	return new Promise( function( resolve, reject){

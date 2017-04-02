@@ -1,9 +1,12 @@
 {
 	"name": "dir-reader",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "",
-	"main": "dir-reader.js",
+	"main": "build/dir-reader.js",
+	"module": "dir-reader.js",
 	"scripts": {
+		"prepublish": "npm run build",
+		"build": "babel dir-reader.js --out-dir build",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
@@ -13,6 +16,9 @@
 	"keywords": [],
 	"author": "rektide de la faye",
 	"license": "X11",
-	"dependencies": {
+	"dependencies": {},
+	"devDependencies": {
+		"babel-cli": "^6.24.0",
+		"babel-plugin-transform-es2015-modules-commonjs": "^6.24.0"
 	}
 }
