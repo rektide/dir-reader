@@ -1,16 +1,4 @@
-import { readDir as _readDir } from 'fs'
-
-let readDir= function( dir){
-	return new Promise( function( resolve, reject){
-		_readDir(( err, dir) => {
-			if( err){
-				reject( err)
-			}else{
-				resolve( dir)
-			}
-		})
-	})
-}
+import { readDir as readDir } from 'md/fz'
 
 export let defaults= {
 	filterName: '.*js'
@@ -37,6 +25,7 @@ export class DirReader extends Promise{
 	async readDir( dir){
 		return readDir( dir|| this.dir)
 			.then( this.filterFiles)
+			.catch
 	}
 	filterFiles( files){
 		files= files|| []
