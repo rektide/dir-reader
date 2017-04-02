@@ -1,4 +1,4 @@
-import { readDir as readDir } from 'md/fz'
+import { readdir } from 'mz/fs'
 
 export let defaults= {
 	filterName: '.*js'
@@ -22,10 +22,10 @@ export class DirReader extends Promise{
 			}
 		}
 	}
-	async readDir( dir){
-		return readDir( dir|| this.dir)
+	async then( onFulfilled, onRejected){
+		return readdir( dir|| this.dir)
 			.then( this.filterFiles)
-			.catch
+			.then( onFulfilled, onRejected)
 	}
 	filterFiles( files){
 		files= files|| []
