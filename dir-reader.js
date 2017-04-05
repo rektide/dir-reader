@@ -1,7 +1,6 @@
 import { readdir } from 'mz/fs'
 
 export let defaults= {
-	include: '.*js'
 }
 
 export class DirReader extends Promise{
